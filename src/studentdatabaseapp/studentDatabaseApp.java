@@ -11,7 +11,7 @@ public class studentDatabaseApp {
         Student[] students = new Student[numOfStudents];
 
         // Create n number of new students
-        for(int i=0; i<students.length;i++){
+        for (int i = 0; i < students.length; i++) {
             students[i] = new Student();
             students[i].enroll();
             students[i].payTuition();

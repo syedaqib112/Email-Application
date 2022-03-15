@@ -3,18 +3,19 @@ package studentdatabaseapp;
 import java.util.Scanner;
 
 public class Student {
+    private static int costOfCourse = 600;
+    private static int id = 1000;
     private String firstName;
     private String lastName;
     private int gradeYear;
     private String studentID;
     private String courses = "";
     private int tutionBalance = 0;
-    private static int costOfCourse = 600;
-    private static int id = 1000;;
+    ;
 
 
     // Constructor: prompt user to enter student's name and year
-    public Student(){
+    public Student() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter student first name: ");
         this.firstName = sc.nextLine();
@@ -30,15 +31,15 @@ public class Student {
     }
 
     // Generate an ID
-    private void setStudentID(){
+    private void setStudentID() {
         // Grade + ID
         id++;
-        this.studentID =  gradeYear + "" + id;
+        this.studentID = gradeYear + "" + id;
 
     }
 
     // Enroll in courses
-    public void enroll(){
+    public void enroll() {
         // Get inside a loop, user hits 0
         do {
             System.out.print("Enter course to enroll (Q to quit): ");
@@ -51,16 +52,17 @@ public class Student {
                 break;
             }
         }
-        while(1 != 0);
+        while (1 != 0);
 //        System.out.println("ENROLLED IN: \n"+courses);
     }
+
     // View balance
-    public void viewBalance(){
+    public void viewBalance() {
         System.out.println("Your balance is: $" + tutionBalance);
     }
 
     // Pay tution fee
-    public  void payTuition(){
+    public void payTuition() {
         viewBalance();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your payment: $");
@@ -69,12 +71,13 @@ public class Student {
         System.out.println("Thank you for your payment of $" + payment);
         viewBalance();
     }
+
     // Show status
-    public String toString(){
+    public String toString() {
         return "Name: " + firstName + " " + lastName +
-                "\nGrade Level: "+gradeYear +
-                "\nStudent ID: "+studentID +
+                "\nGrade Level: " + gradeYear +
+                "\nStudent ID: " + studentID +
                 "\nCourses Enrolled:" + courses +
-                "\nBalance: $"+ tutionBalance;
+                "\nBalance: $" + tutionBalance;
     }
 }
